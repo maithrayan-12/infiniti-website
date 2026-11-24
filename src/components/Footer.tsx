@@ -11,18 +11,16 @@ export default function Footer() {
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
-      // scrubbing a CSS variable repaints the huge wordmark every frame — mouse devices only;
-      // touch devices keep the (already filled) final state, which keeps phone scrolling light
-      mm.add("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)", () => {
-        gsap.fromTo(
-          ".foot-word",
-          { "--f": "0%" },
-          {
-            "--f": "100%",
-            ease: "none",
-            scrollTrigger: { trigger: root.current, start: "top 75%", end: "bottom bottom", scrub: true },
-          },
-        );
+      // Works on every device, phones included: the red copy is revealed by a window that slides up while the text
+      // inside slides down by the same amount, so the letters stay still and only the clip edge rises (transforms only).
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap
+          .timeline({
+            // from the moment the wordmark peeks in until the very end of the page, whatever the screen height
+            scrollTrigger: { trigger: ".foot-word", start: "top bottom", end: "max", scrub: true },
+          })
+          .fromTo(".fw-window", { yPercent: 100 }, { yPercent: 0, ease: "none" }, 0)
+          .fromTo(".fw-fill", { yPercent: -100 }, { yPercent: 0, ease: "none" }, 0);
       });
     },
     { scope: root },
@@ -63,7 +61,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="foot-word" aria-hidden="true">infiniti</div>
+      <div className="foot-word" aria-hidden="true">
+        <span className="fw-base">infiniti</span>
+        <span className="fw-window">
+          <span className="fw-fill">infiniti</span>
+        </span>
+      </div>
 
       <div className="container foot-bottom">
         <span>© {new Date().getFullYear()} infiniti. All rights reserved.</span>
