@@ -88,8 +88,14 @@ export default function Contact() {
               no-obligation quote.
             </p>
             <ul className="contact-list">
-              <li><span className="clay-ico sm"><Icon name="mail" /></span> hello@infiniti.com</li>
-              <li><span className="clay-ico sm"><Icon name="phone" /></span> +1 (555) 010-0199</li>
+              <li>
+                <span className="clay-ico sm"><Icon name="mail" /></span>
+                <a href="mailto:hello@infiniti.com">hello@infiniti.com</a>
+              </li>
+              <li>
+                <span className="clay-ico sm"><Icon name="phone" /></span>
+                <a href="tel:+15550100199">+1 (555) 010-0199</a>
+              </li>
               <li><span className="clay-ico sm"><Icon name="pin" /></span> Your city, Your country</li>
             </ul>
           </div>

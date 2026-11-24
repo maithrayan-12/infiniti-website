@@ -15,10 +15,29 @@ export default function SmoothScroll() {
     let lenis: Lenis | null = null;
     let tick: ((time: number) => void) | null = null;
 
+    // touch smoothing (syncTouch): Lenis drives touch scrolling on Android so it gets the same eased, inertial flow
+    // as desktop. iOS (iPhone and iPadOS) keeps its native scrolling: it already has the best momentum there, keeps the
+    // address bar collapsing, and JS-driven touch scrolling is unreliable on Safari.
+    // Set NEXT_PUBLIC_SMOOTH_TOUCH=false to use native touch scrolling everywhere.
+    const ua = navigator.userAgent;
+    const isIOS = /iP(hone|ad|od)/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const smoothTouch = process.env.NEXT_PUBLIC_SMOOTH_TOUCH !== "false" && !isIOS;
+
+    // let horizontal swipe areas (service cards, step strip) and the menu keep native gestures
+    const prevent = (node: HTMLElement) => {
+      if (node.closest("[data-lenis-prevent]")) return true;
+      const strip = node.closest<HTMLElement>(".hs-track, .steps");
+      return !!strip && strip.scrollWidth > strip.clientWidth + 1 && getComputedStyle(strip).overflowX !== "visible";
+    };
+
     if (!reduce) {
       lenis = new Lenis({
         duration: 1.15,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        syncTouch: smoothTouch,
+        syncTouchLerp: 0.1,
+        touchInertiaExponent: 1.8,
+        prevent,
       });
       lenisRef.current = lenis;
       lenis.on("scroll", ScrollTrigger.update);
@@ -31,6 +50,8 @@ export default function SmoothScroll() {
 
     const onLoaded = () => lenis?.start();
     window.addEventListener("infiniti:loaded", onLoaded);
+    // failsafe: never leave scrolling locked if the intro event doesn't arrive
+    const unlock = setTimeout(() => lenis?.start(), 8000);
 
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -56,6 +77,7 @@ export default function SmoothScroll() {
     document.fonts?.ready.then(() => ScrollTrigger.refresh());
 
     return () => {
+      clearTimeout(unlock);
       document.removeEventListener("click", onClick);
       window.removeEventListener("infiniti:loaded", onLoaded);
       if (tick) gsap.ticker.remove(tick);

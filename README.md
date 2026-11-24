@@ -77,6 +77,7 @@ Stop `npm run dev` before running a local Netlify build — the dev server locks
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL for metadata, sitemap and robots.txt (falls back to Netlify's `URL`, then `http://localhost:3000`) |
+| `NEXT_PUBLIC_SMOOTH_TOUCH` | Set to `false` to turn off Lenis touch smoothing on Android and use native scrolling everywhere (on by default for Android; iOS always uses native scrolling) |
 | `NEXT_PUBLIC_FORM_TARGET` | `netlify` or `api` — forces where the contact form posts (auto-detected: `netlify` on Netlify builds) |
 
 ## Accessibility and motion

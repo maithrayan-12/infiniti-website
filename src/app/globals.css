@@ -109,11 +109,11 @@ html:not(.lenis) { scroll-behavior: smooth; }
 /* ---------- Material primitives ---------- */
 .glass {
   background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 26px 50px -26px rgba(170, 20, 40, 0.38);
 }
-.glass-light { background: rgba(255, 255, 255, 0.86); border: 1px solid #fff; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: inset 0 1px 0 #fff, 0 30px 60px -28px rgba(160, 20, 40, 0.4); }
-.glass-dark { background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08)); border: 1px solid rgba(255, 255, 255, 0.32); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 24px 40px -24px rgba(80, 0, 12, 0.6); color: #fff; }
+.glass-light { background: rgba(255, 255, 255, 0.86); border: 1px solid #fff; backdrop-filter: blur(20px); box-shadow: inset 0 1px 0 #fff, 0 30px 60px -28px rgba(160, 20, 40, 0.4); }
+.glass-dark { background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08)); border: 1px solid rgba(255, 255, 255, 0.32); backdrop-filter: blur(18px) saturate(1.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 24px 40px -24px rgba(80, 0, 12, 0.6); color: #fff; }
 
 .clay { background: var(--clay-bg); box-shadow: var(--clay-shadow); border-radius: 34px; }
 .clay-red {
@@ -144,7 +144,7 @@ html:not(.lenis) { scroll-behavior: smooth; }
 .btn-clay { color: #fff; text-shadow: 0 1px 1px rgba(120, 0, 15, 0.3); background: linear-gradient(160deg, #ff6c7e 0%, var(--red) 55%, var(--red-d) 100%); box-shadow: 0 16px 26px -10px rgba(220, 26, 49, 0.7), inset 0 3px 6px rgba(255, 255, 255, 0.55), inset 0 -6px 12px rgba(120, 0, 15, 0.38); }
 .btn-clay:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 22px 32px -10px rgba(220, 26, 49, 0.75), inset 0 3px 6px rgba(255, 255, 255, 0.6), inset 0 -6px 12px rgba(120, 0, 15, 0.38); }
 .btn-clay:active { transform: translateY(1px) scale(0.98); box-shadow: 0 6px 12px -6px rgba(220, 26, 49, 0.7), inset 0 4px 10px rgba(120, 0, 15, 0.4); }
-.btn-glass { color: var(--ink); background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 #fff, 0 12px 24px -14px rgba(170, 20, 40, 0.4); }
+.btn-glass { color: var(--ink); background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.9); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 #fff, 0 12px 24px -14px rgba(170, 20, 40, 0.4); }
 .btn-glass:hover { background: #fff; color: var(--red); transform: translateY(-3px); }
 
 /* ---------- Header: split floating island nav ---------- */
@@ -262,6 +262,11 @@ html:not(.lenis) { scroll-behavior: smooth; }
 .js:not(.loaded) [data-split][data-eager] .wi { transform: translateY(125%) rotate(7deg); }
 .js .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.9s var(--ease) var(--d, 0s), transform 0.9s var(--ease) var(--d, 0s); }
 .js .reveal.in { opacity: 1; transform: none; }
+/* failsafe (set by the inline script in layout.tsx if scripts never finished loading): show everything */
+.js.failsafe .preloader { clip-path: inset(0 0 100% 0); visibility: hidden; }
+.js.failsafe .reveal, .js.failsafe [data-in], .js.failsafe .layer { opacity: 1; transform: none; }
+.js.failsafe [data-split] .wi { transform: none !important; }
+.js.failsafe .inf-line { stroke-dashoffset: 0; }
 [data-in] { transition: opacity 1s var(--ease) var(--d, 0s), transform 1s var(--ease) var(--d, 0s); }
 .js:not(.loaded) [data-in] { opacity: 0; transform: translateY(26px); }
 
@@ -566,7 +571,9 @@ input[type="range"]:focus-visible { outline-color: #fff; }
 .cta-copy > p { font-size: 1.1rem; color: var(--muted); }
 .contact-list { display: grid; gap: 14px; margin-top: 34px; font-weight: 500; color: var(--ink); }
 .contact-list li { display: flex; align-items: center; gap: 14px; }
-.contact-list .clay-ico { background: linear-gradient(160deg, #ff6c7e, var(--red) 58%, var(--red-d)); color: #fff; }
+.contact-list a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.contact-list a:hover { color: var(--red); }
+.contact-list .clay-ico {background: linear-gradient(160deg, #ff6c7e, var(--red) 58%, var(--red-d)); color: #fff; }
 .form { display: grid; gap: 16px; padding: clamp(22px, 3vw, 36px); border-radius: 30px; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field { display: grid; gap: 8px; }
@@ -728,6 +735,20 @@ input[type="range"]:focus-visible { outline-color: #fff; }
   .pill { font-size: 0.8rem; }
   .svc, .hs-intro { flex-basis: 84vw; }
   .foot { grid-template-columns: 1fr; }
+}
+
+/* phones & tablets: drop the effects that are costly to repaint while scrolling.
+   Frosted blur over moving content, the full-screen grain layer and drifting blurred orbs are the usual
+   causes of dropped frames on mobile GPUs, so glass becomes a near-opaque white surface instead. */
+@media (hover: none), (max-width: 1020px) {
+  .grain { display: none; }
+  .orb { animation: none; }
+  .glass { backdrop-filter: none; background: rgba(255, 255, 255, 0.92); }
+  .glass-light { backdrop-filter: none; background: rgba(255, 255, 255, 0.95); }
+  .glass-dark { backdrop-filter: none; background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.12)); }
+  .btn-glass { backdrop-filter: none; background: rgba(255, 255, 255, 0.92); }
+  /* keep native momentum on swipe rows and stop sideways swipes from chaining into the page */
+  .hs-track, .steps { overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
 }
 
 /* touch devices: no sticky hover states */

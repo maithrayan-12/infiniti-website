@@ -185,7 +185,7 @@ export default function Header() {
         </div>
       </header>
 
-      <div className={`mobile-menu${open ? " open" : ""}`} id="mobile-menu" inert={!open} onClick={(e) => (e.target as Element).closest("a") && setOpen(false)}>
+      <div className={`mobile-menu${open ? " open" : ""}`} id="mobile-menu" data-lenis-prevent inert={!open} onClick={(e) => (e.target as Element).closest("a") && setOpen(false)}>
         <ul className="mm-list">
           {NAV_LINKS.map((l, i) => (
             <li key={l.href}>

@@ -10,6 +10,9 @@ const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["nor
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
+  // iOS Safari auto-wraps phone numbers, emails, dates and addresses in links BEFORE React hydrates, which makes the
+  // DOM differ from the server HTML (a hydration error). Turn that off; real contact links are rendered explicitly.
+  formatDetection: { telephone: false, email: false, address: false, date: false, url: false },
   title: "infiniti — Recruitment Process Outsourcing",
   description:
     "infiniti runs your recruitment end to end: sourcing, screening, interviewing and onboarding. Faster hires, lower cost, zero hiring headaches.",
@@ -32,7 +35,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${head.variable} ${body.variable} ${serif.variable}`} suppressHydrationWarning>
       <head>
         {/* marks JS-capable browsers before first paint so animation start-states never flash */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        {/* The second part is a failsafe: if scripts fail to load/hydrate (slow network, blocked dev origin, an older
+            browser), reveal the page after 8s instead of leaving the loader up and content hidden. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('loaded')){d.classList.add('loaded','failsafe')}},8000)",
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>

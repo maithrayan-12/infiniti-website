@@ -11,7 +11,9 @@ export default function Footer() {
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // scrubbing a CSS variable repaints the huge wordmark every frame — mouse devices only;
+      // touch devices keep the (already filled) final state, which keeps phone scrolling light
+      mm.add("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)", () => {
         gsap.fromTo(
           ".foot-word",
           { "--f": "0%" },
