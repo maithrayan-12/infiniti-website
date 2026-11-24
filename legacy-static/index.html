@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>infiniti — Recruitment Process Outsourcing</title>
+  <meta name="description" content="infiniti runs your recruitment end to end: sourcing, screening, interviewing and onboarding. Faster hires, lower cost, zero hiring headaches.">
+  <meta name="theme-color" content="#dc1a31">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23dc1a31'/%3E%3Cpath d='M32 32c4-9 15-11 17 0 2 11-13 11-17 0-4-11-15-11-17 0-2 11 13 11 17 0z' fill='none' stroke='white' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4.5 2 4.5 4.5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5"/></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24"><path d="M4 10v4h3l8 4V6L7 10H4z"/><path d="M19 9.5c1 .8 1 4.2 0 5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M21 20H3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-8.8-9.4C2.3 7.2 4.4 4.5 7.3 4.5c1.9 0 3.5 1 4.7 2.7 1.2-1.7 2.8-2.7 4.7-2.7 2.9 0 5 2.7 4.1 6.1C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h3l2.4 11h10l2-8H7"/><circle cx="10" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 20V9l6 4V9l6 4V5h4a2 2 0 012 2v13H3z"/><path d="M8 20v-3M13 20v-3M18 20v-3"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 9h4l4 3v4h-8"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-phone2" viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0116 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- Intro loader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <svg class="pl-mark" viewBox="0 0 64 40" fill="none"><path pathLength="1" d="M32 20c4-9 15-11 17 0 2 11-13 11-17 0-4-11-15-11-17 0-2 11 13 11 17 0z" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="pl-word">infiniti</span>
+  </div>
+</div>
+
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="nav glass">
+    <a class="brand" href="#hero" aria-label="infiniti home">
+      <span class="brand-mark clay-red" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M32 32c4-9 15-11 17 0 2 11-13 11-17 0-4-11-15-11-17 0-2 11 13 11 17 0z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-word">infiniti</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#difference">Why us</a>
+      <a href="#savings">Savings</a>
+      <a href="#industries">Industries</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-clay nav-cta-mobile" href="#contact">Talk to us</a>
+    </nav>
+
+    <a class="btn btn-clay btn-sm nav-cta magnetic" href="#contact">Talk to us <svg class="ico"><use href="#i-arrow"/></svg></a>
+
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Section dots -->
+<nav class="dots" id="dots" aria-label="Page sections">
+  <a href="#hero" data-for="hero"><span>Intro</span></a>
+  <a href="#manifesto" data-for="manifesto"><span>Belief</span></a>
+  <a href="#services" data-for="services"><span>Services</span></a>
+  <a href="#process" data-for="process"><span>Process</span></a>
+  <a href="#difference" data-for="difference"><span>Why us</span></a>
+  <a href="#savings" data-for="savings"><span>Savings</span></a>
+  <a href="#industries" data-for="industries"><span>Industries</span></a>
+  <a href="#faq" data-for="faq"><span>FAQ</span></a>
+  <a href="#contact" data-for="contact"><span>Contact</span></a>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="aurora" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i></div>
+
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="pill glass" data-in style="--d:.1s"><span class="pulse"></span> Recruitment Process Outsourcing</p>
+      <h1 id="hero-title" data-split>Your hiring engine, <em>always on.</em></h1>
+      <p class="lead" data-in style="--d:.55s">infiniti takes over sourcing, screening, interviewing and onboarding, so your team gets exceptional people without the hiring overhead.</p>
+      <div class="hero-actions" data-in style="--d:.7s">
+        <a class="btn btn-clay btn-lg magnetic" href="#contact">Book a free consultation <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-glass btn-lg magnetic" href="#process">See how it works</a>
+      </div>
+      <div class="proof" data-in style="--d:.85s">
+        <div class="avatars" aria-hidden="true"><i>A</i><i>R</i><i>S</i><i>M</i></div>
+        <p><strong>Dedicated recruiters</strong> embedded in your team,<br>scaling up or down as you grow.</p>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg class="infinity" viewBox="0 0 600 300" fill="none">
+        <defs>
+          <linearGradient id="g-inf" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff6f80"/>
+            <stop offset="1" stop-color="#b80f26"/>
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="14"/></filter>
+        </defs>
+        <path d="M300 150C370 60 520 40 540 150C520 260 370 240 300 150C230 60 80 40 60 150C80 260 230 240 300 150Z" stroke="#ff4d63" stroke-opacity=".45" stroke-width="30" filter="url(#glow)"/>
+        <path d="M300 150C370 60 520 40 540 150C520 260 370 240 300 150C230 60 80 40 60 150C80 260 230 240 300 150Z" stroke="#fff" stroke-opacity=".9" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="inf-path" class="inf-line" pathLength="1" d="M300 150C370 60 520 40 540 150C520 260 370 240 300 150C230 60 80 40 60 150C80 260 230 240 300 150Z" stroke="url(#g-inf)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle r="12" fill="#fff" stroke="#dc1a31" stroke-width="5">
+          <animateMotion dur="8s" repeatCount="indefinite" rotate="auto"><mpath href="#inf-path"/></animateMotion>
+        </circle>
+      </svg>
+
+      <div class="layer" data-speed="14">
+        <div class="float-card glass fc-a">
+          <span class="fc-ico clay-red"><svg class="ico"><use href="#i-check"/></svg></span>
+          <div><strong>Shortlist delivered</strong><small>Senior Backend Engineer · 48 hrs</small></div>
+        </div>
+      </div>
+
+      <div class="layer" data-speed="26">
+        <div class="float-card glass fc-b">
+          <div class="cand">
+            <span class="avatar clay-red">AR</span>
+            <div><strong>Aarav R.</strong><small>Product Designer</small></div>
+            <span class="match">94% match</span>
+          </div>
+          <div class="bar"><i style="--w:94%"></i></div>
+          <div class="tags"><span>Figma</span><span>Systems</span><span>B2B SaaS</span></div>
+        </div>
+      </div>
+
+      <div class="layer" data-speed="8">
+        <div class="float-card glass fc-c">
+          <strong class="fc-title">Live pipeline</strong>
+          <div class="pipe"><span>Sourced</span><div class="bar"><i style="--w:100%"></i></div><b>128</b></div>
+          <div class="pipe"><span>Screened</span><div class="bar"><i style="--w:62%"></i></div><b>46</b></div>
+          <div class="pipe"><span>Interview</span><div class="bar"><i style="--w:28%"></i></div><b>12</b></div>
+          <div class="pipe"><span>Offered</span><div class="bar"><i style="--w:12%"></i></div><b>3</b></div>
+        </div>
+      </div>
+
+      <div class="layer" data-speed="20">
+        <div class="float-card glass fc-d">
+          <span class="fc-ico clay-red"><svg class="ico"><use href="#i-award"/></svg></span>
+          <div><strong>Offer accepted</strong><small>Starts Monday</small></div>
+        </div>
+      </div>
+
+      <div class="layer" data-speed="32">
+        <div class="badge clay-red">
+          <svg viewBox="0 0 120 120" class="badge-ring">
+            <defs><path id="circ" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
+            <text><textPath href="#circ" startOffset="0">RECRUIT • SCALE • RETAIN • REPEAT •</textPath></text>
+          </svg>
+          <svg class="ico badge-ico"><use href="#i-arrow"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#manifesto" aria-label="Scroll to next section"><span class="mouse"><i></i></span><span>Scroll</span></a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee" aria-label="Roles we hire for">
+  <div class="mq-row" data-dir="1">
+    <div class="mq-group">
+      <span>Software Engineers</span><i>✺</i><span class="o">Nurses &amp; Allied Health</span><i>✺</i><span>Sales Executives</span><i>✺</i><span class="o">Customer Support</span><i>✺</i><span>Data Analysts</span><i>✺</i><span class="o">Finance &amp; Accounting</span><i>✺</i>
+    </div>
+  </div>
+  <div class="mq-row" data-dir="-1">
+    <div class="mq-group">
+      <span class="o">Warehouse &amp; Logistics</span><i>✺</i><span>Product Managers</span><i>✺</i><span class="o">Technicians</span><i>✺</i><span>HR Generalists</span><i>✺</i><span class="o">Marketing Leads</span><i>✺</i><span>Operations</span><i>✺</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto" id="manifesto" aria-labelledby="manifesto-label">
+  <div class="container">
+    <p class="eyebrow" id="manifesto-label">Our belief</p>
+    <p class="manifesto-text" id="manifesto-text">We don't just fill seats. We build the <mark>teams</mark> that make ambitious businesses <mark>unstoppable</mark>, one great hire after another, <mark>endlessly.</mark></p>
+
+    <div class="stats reveal">
+      <div class="stat glass"><b><span data-count="48">48</span><em>hrs</em></b><span>to first qualified shortlist</span></div>
+      <div class="stat glass"><b><span data-count="92">92</span><em>%</em></b><span>offer acceptance rate</span></div>
+      <div class="stat glass"><b><span data-count="40">40</span><em>%</em></b><span>lower cost per hire</span></div>
+      <div class="stat glass"><b><span data-count="25">25</span><em>+</em></b><span>industries served</span></div>
+    </div>
+    <p class="stat-note">Sample figures shown for illustration.</p>
+  </div>
+</section>
+
+<!-- ============ SERVICES (horizontal scroll) ============ -->
+<section class="services" id="services" aria-labelledby="services-title">
+  <div class="aurora soft" aria-hidden="true"><i class="orb o1"></i><i class="orb o3"></i></div>
+  <div class="hs-pin">
+    <div class="hs-track" id="hs-track">
+      <header class="hs-intro">
+        <p class="eyebrow">What we do</p>
+        <h2 id="services-title" data-split>One partner for every kind of <em>hiring.</em></h2>
+        <p class="sub">From a single critical role to a thousand seasonal hires, pick the model that fits and change it any time.</p>
+        <div class="hs-hint"><span class="hs-count"><b id="hs-now">01</b> / 06</span><span class="hs-arrow">Keep scrolling <svg class="ico"><use href="#i-arrow"/></svg></span></div>
+      </header>
+
+      <article class="svc clay hot spot">
+        <span class="svc-n">01</span>
+        <span class="clay-ico"><svg class="ico"><use href="#i-layers"/></svg></span>
+        <h3>Full-cycle RPO</h3>
+        <p>We become your talent team: planning, sourcing, screening, interviews, offers and onboarding, all under your brand.</p>
+        <ul class="tags-list"><li>Dedicated pod</li><li>Your ATS</li><li>Weekly reviews</li></ul>
+        <a class="link-arrow" href="#contact">Explore <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="svc clay spot">
+        <span class="svc-n">02</span>
+        <span class="clay-ico"><svg class="ico"><use href="#i-users"/></svg></span>
+        <h3>Project &amp; volume hiring</h3>
+        <p>Opening a site, launching a product or ramping for peak season? We staff up fast and wind down cleanly.</p>
+        <ul class="tags-list"><li>Seasonal</li><li>New sites</li><li>Campus</li></ul>
+        <a class="link-arrow" href="#contact">Plan a project <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="svc clay spot">
+        <span class="svc-n">03</span>
+        <span class="clay-ico"><svg class="ico"><use href="#i-search"/></svg></span>
+        <h3>On-demand recruiters</h3>
+        <p>Embed senior recruiters into your team for as long as you need, without permanent headcount.</p>
+        <ul class="tags-list"><li>Flexible</li><li>Specialist</li><li>Fast start</li></ul>
+        <a class="link-arrow" href="#contact">Add capacity <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="svc clay spot">
+        <span class="svc-n">04</span>
+        <span class="clay-ico"><svg class="ico"><use href="#i-award"/></svg></span>
+        <h3>Executive search</h3>
+        <p>Confidential, research-led searches for leadership roles, backed by structured assessment.</p>
+        <ul class="tags-list"><li>Confidential</li><li>Mapping</li><li>Assessment</li></ul>
+        <a class="link-arrow" href="#contact">Start a search <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="svc clay spot">
+        <span class="svc-n">05</span>
+        <span class="clay-ico"><svg class="ico"><use href="#i-mega"/></svg></span>
+        <h3>Employer branding</h3>
+        <p>Career pages, outreach and candidate communication that make exceptional people want to say yes.</p>
+        <ul class="tags-list"><li>Career site</li><li>Outreach</li><li>Experience</li></ul>
+        <a class="link-arrow" href="#contact">Shape your brand <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="svc clay spot">
+        <span class="svc-n">06</span>
+        <span class="clay-ico"><svg class="ico"><use href="#i-chart"/></svg></span>
+        <h3>Talent analytics</h3>
+        <p>Time-to-fill, source quality, funnel drop-off and cost per hire in one clear dashboard.</p>
+        <div class="mini-chart" aria-hidden="true"><span style="--h:36%"></span><span style="--h:52%"></span><span style="--h:44%"></span><span style="--h:68%"></span><span style="--h:60%"></span><span style="--h:90%"></span></div>
+        <a class="link-arrow" href="#contact">See a sample <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+    <div class="hs-progress" aria-hidden="true"><i id="hs-bar"></i></div>
+  </div>
+</section>
+
+<!-- ============ PROCESS (scroll-driven) ============ -->
+<section class="process" id="process" aria-labelledby="process-title">
+  <svg class="pr-infinity" viewBox="0 0 600 300" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+    <path class="pr-track" d="M300 150C370 50 530 30 552 150C530 270 370 250 300 150C230 50 70 30 48 150C70 270 230 250 300 150Z" stroke-width="2"/>
+    <path class="pr-line" id="pr-line" pathLength="1" d="M300 150C370 50 530 30 552 150C530 270 370 250 300 150C230 50 70 30 48 150C70 270 230 250 300 150Z" stroke-width="4" stroke-linecap="round"/>
+    <circle id="pr-dot" class="pr-dot" r="9" cx="300" cy="150"/>
+  </svg>
+
+  <div class="container pr-wrap">
+    <header class="pr-head">
+      <p class="eyebrow">How it works</p>
+      <h2 id="process-title" data-split>Six steps. <em>Then it loops.</em></h2>
+      <p class="sub">Scroll through the journey, or click a step. Every hire feeds the next, which is why we're called infiniti.</p>
+    </header>
+
+    <div class="process-grid">
+      <div class="steps" role="tablist" aria-label="Hiring process steps" aria-orientation="vertical">
+        <button class="step is-active" role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1" data-step="0"><span class="step-n">1</span><span class="step-t"><b>Discover</b><small>Understand your needs</small></span></button>
+        <button class="step" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1" data-step="1"><span class="step-n">2</span><span class="step-t"><b>Source</b><small>Find the right people</small></span></button>
+        <button class="step" role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3" tabindex="-1" data-step="2"><span class="step-n">3</span><span class="step-t"><b>Screen</b><small>Separate signal from noise</small></span></button>
+        <button class="step" role="tab" id="tab-4" aria-selected="false" aria-controls="panel-4" tabindex="-1" data-step="3"><span class="step-n">4</span><span class="step-t"><b>Interview</b><small>Shortlist and coordinate</small></span></button>
+        <button class="step" role="tab" id="tab-5" aria-selected="false" aria-controls="panel-5" tabindex="-1" data-step="4"><span class="step-n">5</span><span class="step-t"><b>Offer</b><small>Close with confidence</small></span></button>
+        <button class="step" role="tab" id="tab-6" aria-selected="false" aria-controls="panel-6" tabindex="-1" data-step="5"><span class="step-n">6</span><span class="step-t"><b>Onboard</b><small>Set them up to win</small></span></button>
+      </div>
+
+      <div class="panels glass">
+        <div class="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
+          <span class="ghost-n" aria-hidden="true">01</span>
+          <h3>Discover</h3>
+          <p>We start by learning how your business works: roles, culture, hiring managers and the outcomes you care about. Then we build a hiring plan with clear timelines and targets.</p>
+          <ul class="ticks">
+            <li><svg class="ico"><use href="#i-check"/></svg> Intake call with every hiring manager</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Role scorecards and ideal candidate profiles</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Workforce plan with milestones</li>
+          </ul>
+          <div class="chips"><span><svg class="ico"><use href="#i-clock"/></svg> Typically 2–3 days</span><span>Your effort: one kickoff call</span></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden>
+          <span class="ghost-n" aria-hidden="true">02</span>
+          <h3>Source</h3>
+          <p>We go beyond job boards. Our recruiters tap talent pools, referrals, communities and direct outreach to reach people who aren't even looking yet.</p>
+          <ul class="ticks">
+            <li><svg class="ico"><use href="#i-check"/></svg> Multi-channel sourcing and targeted outreach</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Always-on talent pools for repeat roles</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Job ads written to attract, not just inform</li>
+          </ul>
+          <div class="chips"><span><svg class="ico"><use href="#i-clock"/></svg> Starts day 3</span><span>Your effort: none</span></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
+          <span class="ghost-n" aria-hidden="true">03</span>
+          <h3>Screen</h3>
+          <p>Every candidate goes through the same structured screening: skills, motivation, expectations and fit. You only meet people worth your time.</p>
+          <ul class="ticks">
+            <li><svg class="ico"><use href="#i-check"/></svg> Structured phone and video screens</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Skills assessments where they add value</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Written candidate summaries</li>
+          </ul>
+          <div class="chips"><span><svg class="ico"><use href="#i-clock"/></svg> Rolling, within 48 hrs</span><span>Your effort: none</span></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
+          <span class="ghost-n" aria-hidden="true">04</span>
+          <h3>Interview</h3>
+          <p>We deliver a concise shortlist and handle all the scheduling. Feedback flows straight back to us so the next round gets sharper.</p>
+          <ul class="ticks">
+            <li><svg class="ico"><use href="#i-check"/></svg> Calendar coordination for every panel</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Interview guides for your managers</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Candidates kept warm and informed</li>
+          </ul>
+          <div class="chips"><span><svg class="ico"><use href="#i-clock"/></svg> Shortlist in ~48 hrs</span><span>Your effort: interviews and feedback</span></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" tabindex="0" hidden>
+          <span class="ghost-n" aria-hidden="true">05</span>
+          <h3>Offer</h3>
+          <p>We manage compensation conversations, references, background checks and counter-offers, so great candidates don't slip away at the last step.</p>
+          <ul class="ticks">
+            <li><svg class="ico"><use href="#i-check"/></svg> Market-informed offer guidance</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Reference and background verification</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Counter-offer handling</li>
+          </ul>
+          <div class="chips"><span><svg class="ico"><use href="#i-clock"/></svg> Typically 3–5 days</span><span>Your effort: approve the offer</span></div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-6" aria-labelledby="tab-6" tabindex="0" hidden>
+          <span class="ghost-n" aria-hidden="true">06</span>
+          <h3>Onboard</h3>
+          <p>Hiring doesn't end at "yes". We keep new joiners engaged before day one and check in through the first 90 days. Then we loop back to step one for your next role.</p>
+          <ul class="ticks">
+            <li><svg class="ico"><use href="#i-check"/></svg> Pre-boarding and day-one readiness</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> 30 / 60 / 90-day check-ins</li>
+            <li><svg class="ico"><use href="#i-check"/></svg> Retention insights fed back into sourcing</li>
+          </ul>
+          <div class="chips"><span><svg class="ico"><use href="#i-clock"/></svg> First 90 days</span><span>∞ Loops back to step 1</span></div>
+        </div>
+
+        <div class="panel-foot">
+          <div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+          <span class="progress-label" id="progress-label">Step 1 of 6</span>
+          <button class="btn btn-clay btn-sm" id="next-step" type="button">Next step <svg class="ico"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFFERENCE ============ -->
+<section class="section difference" id="difference" aria-labelledby="diff-title">
+  <div class="container diff-grid">
+    <header class="reveal">
+      <p class="eyebrow">Why infiniti</p>
+      <h2 id="diff-title" data-split>Hiring shouldn't pull you away from <em>the business.</em></h2>
+      <p class="sub">Flip the switch to see what changes when recruitment is handled by people who do nothing else.</p>
+
+      <div class="toggle clay-inset" role="group" aria-label="Compare approaches">
+        <button type="button" class="toggle-btn is-on" data-mode="inhouse" aria-pressed="true">In-house only</button>
+        <button type="button" class="toggle-btn" data-mode="infiniti" aria-pressed="false">With infiniti</button>
+        <span class="toggle-thumb clay-red" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="compare glass reveal" id="compare" data-mode="inhouse">
+      <div class="compare-visual" aria-hidden="true">
+        <svg viewBox="0 0 600 200" fill="none">
+          <path class="cv-broken" d="M20 100 H150 M190 100 H280 M320 100 H400 M440 100 H580" stroke-width="10" stroke-linecap="round"/>
+          <path class="cv-loop" pathLength="1" d="M300 100C350 20 460 10 480 100C460 190 350 180 300 100C250 20 140 10 120 100C140 190 250 180 300 100Z" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <ul class="compare-list c-in">
+        <li><svg class="ico"><use href="#i-x"/></svg><div><b>Recruiters stretched thin</b><span>Juggling dozens of roles at once.</span></div></li>
+        <li><svg class="ico"><use href="#i-x"/></svg><div><b>Slow to ramp up</b><span>Hiring spikes mean months of lead time.</span></div></li>
+        <li><svg class="ico"><use href="#i-x"/></svg><div><b>Uneven candidate experience</b><span>Silence and delays cost you great people.</span></div></li>
+        <li><svg class="ico"><use href="#i-x"/></svg><div><b>Fixed overhead</b><span>Salaries and tools whether you hire or not.</span></div></li>
+      </ul>
+      <ul class="compare-list c-inf">
+        <li><svg class="ico"><use href="#i-check"/></svg><div><b>A dedicated team, focused on you</b><span>Specialist recruiters who learn your business.</span></div></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><div><b>Scale in days, not months</b><span>Flex capacity up or down as needs change.</span></div></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><div><b>A consistent, branded experience</b><span>Every candidate informed at every step.</span></div></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><div><b>Pay for the hiring you need</b><span>Predictable, variable cost that tracks demand.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAVINGS CALCULATOR ============ -->
+<section class="section savings" id="savings" aria-labelledby="savings-title">
+  <div class="aurora hot" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i></div>
+  <div class="rings" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow on-red">Savings estimator</p>
+      <h2 id="savings-title" data-split>See what you could <em>keep.</em></h2>
+      <p class="sub">Move the sliders to match your hiring plan and compare against typical agency fees.</p>
+    </header>
+
+    <div class="calc reveal">
+      <div class="calc-inputs glass-dark">
+        <div class="field-range">
+          <label for="hires">Hires per year <output id="hires-out" for="hires">40</output></label>
+          <input type="range" id="hires" min="5" max="500" step="5" value="40">
+        </div>
+        <div class="field-range">
+          <label for="salary">Average annual salary <output id="salary-out" for="salary">$60,000</output></label>
+          <input type="range" id="salary" min="20000" max="200000" step="5000" value="60000">
+        </div>
+        <div class="field-range">
+          <label for="fee">Typical agency fee <output id="fee-out" for="fee">20%</output></label>
+          <input type="range" id="fee" min="10" max="30" step="1" value="20">
+        </div>
+        <p class="fine">Assumes an effective infiniti cost of 12% of first-year salary. This is an illustrative estimate; your actual savings depend on your plan.</p>
+      </div>
+
+      <div class="calc-result clay" aria-live="polite">
+        <p class="calc-kicker">Estimated yearly savings</p>
+        <p class="calc-big" id="savings-total">$0</p>
+        <div class="cmp">
+          <div class="cmp-row"><span>Traditional agencies</span><b id="cost-agency">$0</b></div>
+          <div class="cmp-bar"><i id="bar-agency" style="--w:100%"></i></div>
+          <div class="cmp-row"><span>With infiniti</span><b id="cost-inf">$0</b></div>
+          <div class="cmp-bar alt"><i id="bar-inf" style="--w:60%"></i></div>
+        </div>
+        <a class="btn btn-clay magnetic" href="#contact">Get a real quote <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="section industries-sec" id="industries" aria-labelledby="ind-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Industries</p>
+      <h2 id="ind-title" data-split>Deep benches across <em>every sector.</em></h2>
+      <p class="sub">Specialist recruiters who know the roles, the talent and the market.</p>
+    </header>
+
+    <ul class="industries">
+      <li class="clay tilt spot reveal"><span class="clay-ico sm"><svg class="ico"><use href="#i-cpu"/></svg></span><b>Technology</b><span>Engineering, product, data, security</span></li>
+      <li class="clay tilt spot reveal" style="--d:.06s"><span class="clay-ico sm"><svg class="ico"><use href="#i-heart"/></svg></span><b>Healthcare</b><span>Clinical, allied health, administration</span></li>
+      <li class="clay tilt spot reveal" style="--d:.12s"><span class="clay-ico sm"><svg class="ico"><use href="#i-bank"/></svg></span><b>Banking &amp; Finance</b><span>Risk, compliance, operations, sales</span></li>
+      <li class="clay tilt spot reveal" style="--d:.18s"><span class="clay-ico sm"><svg class="ico"><use href="#i-cart"/></svg></span><b>Retail &amp; E-commerce</b><span>Stores, merchandising, growth</span></li>
+      <li class="clay tilt spot reveal"><span class="clay-ico sm"><svg class="ico"><use href="#i-factory"/></svg></span><b>Manufacturing</b><span>Plant, quality, engineering, supply</span></li>
+      <li class="clay tilt spot reveal" style="--d:.06s"><span class="clay-ico sm"><svg class="ico"><use href="#i-truck"/></svg></span><b>Logistics</b><span>Warehousing, fleet, planning</span></li>
+      <li class="clay tilt spot reveal" style="--d:.12s"><span class="clay-ico sm"><svg class="ico"><use href="#i-phone2"/></svg></span><b>BPO &amp; Support</b><span>Voice, chat, quality, team leads</span></li>
+      <li class="clay tilt spot reveal" style="--d:.18s"><span class="clay-ico sm"><svg class="ico"><use href="#i-users"/></svg></span><b>Professional Services</b><span>Consulting, legal, HR, marketing</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq-sec" id="faq" aria-labelledby="faq-title">
+  <div class="container faq-grid">
+    <header class="reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2 id="faq-title" data-split>Questions, <em>answered.</em></h2>
+      <p class="sub">Can't find what you need? Drop us a message and we'll reply within one business day.</p>
+      <a class="btn btn-clay magnetic" href="#contact">Ask us anything <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </header>
+
+    <div class="faq reveal">
+      <details open>
+        <summary>What is recruitment process outsourcing (RPO)?</summary>
+        <p>RPO means handing some or all of your recruitment function to a specialist partner. infiniti acts as an extension of your HR team, managing sourcing, screening, interviews and onboarding using your brand and tools.</p>
+      </details>
+      <details>
+        <summary>How is this different from a staffing agency?</summary>
+        <p>Agencies typically charge a fee per placement and work on your roles alongside many other clients. With RPO, a dedicated team is embedded in your process, aligned to your goals and accountable for results across your whole hiring plan.</p>
+      </details>
+      <details>
+        <summary>How quickly can you start?</summary>
+        <p>Most engagements kick off within a week of the intake call. For urgent roles, we can begin sourcing the same week while the wider plan is finalised.</p>
+      </details>
+      <details>
+        <summary>Can we outsource only part of our hiring?</summary>
+        <p>Yes. You can choose full-cycle RPO, project-based hiring, on-demand recruiters, or specific stages such as sourcing and screening, and change the model as your needs evolve.</p>
+      </details>
+      <details>
+        <summary>Will candidates know they're talking to infiniti?</summary>
+        <p>That's up to you. Our recruiters can represent your company directly, using your brand, email domains and tone of voice, so candidates experience one consistent team.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="aurora soft" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i></div>
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="cta-copy">
+        <p class="eyebrow on-red">Let's talk</p>
+        <h2 id="contact-title" data-split>Ready to hire without the <em>headaches?</em></h2>
+        <p>Tell us what you're hiring for and we'll come back within one business day with a plan and a no-obligation quote.</p>
+        <ul class="contact-list">
+          <li><span class="clay-ico sm light"><svg class="ico"><use href="#i-mail"/></svg></span> hello@infiniti.com</li>
+          <li><span class="clay-ico sm light"><svg class="ico"><use href="#i-phone"/></svg></span> +1 (555) 010-0199</li>
+          <li><span class="clay-ico sm light"><svg class="ico"><use href="#i-pin"/></svg></span> Your city, Your country</li>
+        </ul>
+      </div>
+
+      <form class="form glass-light" id="contact-form" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err">
+            <small class="err" id="name-err" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+            <small class="err" id="email-err" role="alert"></small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="volume">Hires you plan this year</label>
+            <select id="volume" name="volume">
+              <option>1–10</option>
+              <option>11–50</option>
+              <option>51–200</option>
+              <option>200+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">What are you hiring for?</label>
+          <textarea id="message" name="message" rows="4" required aria-describedby="message-err"></textarea>
+          <small class="err" id="message-err" role="alert"></small>
+        </div>
+        <button class="btn btn-clay btn-lg magnetic" type="submit">Send message <svg class="ico"><use href="#i-arrow"/></svg></button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container foot">
+    <div class="foot-brand">
+      <a class="brand" href="#hero" aria-label="infiniti home">
+        <span class="brand-mark clay-red" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 32c4-9 15-11 17 0 2 11-13 11-17 0-4-11-15-11-17 0-2 11 13 11 17 0z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="brand-word">infiniti</span>
+      </a>
+      <p>Recruitment process outsourcing for teams that want great people, without the hiring overhead.</p>
+    </div>
+    <nav aria-label="Footer">
+      <b>Company</b>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#savings">Savings</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <nav aria-label="Services">
+      <b>Solutions</b>
+      <a href="#services">Full-cycle RPO</a>
+      <a href="#services">Volume hiring</a>
+      <a href="#services">Executive search</a>
+      <a href="#services">Analytics</a>
+    </nav>
+    <div>
+      <b>Get in touch</b>
+      <a href="mailto:hello@infiniti.com">hello@infiniti.com</a>
+      <a href="#contact">Book a consultation</a>
+    </div>
+  </div>
+
+  <div class="foot-word" aria-hidden="true">infiniti</div>
+
+  <div class="container foot-bottom">
+    <span>© <span id="year">2026</span> infiniti. All rights reserved.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>

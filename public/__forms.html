@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify Forms skeleton</title>
+  </head>
+  <body>
+    <!--
+      Static copy of the contact form so Netlify can detect it at deploy time
+      (forms rendered by React are not in the built HTML). The real form lives in
+      src/components/Contact.tsx and posts here. Field names must match.
+    -->
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="volume" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>
