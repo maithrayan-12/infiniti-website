@@ -8,6 +8,8 @@
   # Next.js 16 needs Node 20.9+
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
+  # Always send the contact form to Netlify Forms on Netlify builds (explicit, so it never depends on auto-detection)
+  NEXT_PUBLIC_FORM_TARGET = "netlify"
 
 # Security headers for every response
 [[headers]]

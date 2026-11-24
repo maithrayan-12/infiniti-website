@@ -27,6 +27,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 422 });
   }
 
+  // Nothing delivers enquiries from this route yet. In production, fail loudly instead of reporting a success that
+  // would silently lose the visitor's message (on Netlify the form uses Netlify Forms and never reaches this route).
+  if (process.env.NODE_ENV === "production") {
+    return NextResponse.json({ ok: false, error: "Contact delivery is not configured." }, { status: 501 });
+  }
+
   // TODO: deliver the enquiry — send an email (Resend / SendGrid / SES), post to your CRM, or write to a database.
   // Intentionally not logging the visitor's personal details here.
   void { company, volume };

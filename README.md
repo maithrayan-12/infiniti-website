@@ -48,7 +48,7 @@ legacy-static/            the previous plain HTML/CSS/JS version
 
 - Sample statistics (48 hrs, 92 %, 40 %, 25+) and the savings estimator's 12 % infiniti rate in `src/lib/content.ts` / `src/components/Savings.tsx`
 - Placeholder contact details (email, phone, address) in `Contact.tsx` and `Footer.tsx`
-- Contact form: on Netlify, enquiries are stored by **Netlify Forms** (see below). Elsewhere they post to `src/app/api/contact/route.ts`, which validates them but does not deliver them yet — connect an email service, CRM or database where the `TODO` is
+- Contact form: on Netlify, enquiries are stored by **Netlify Forms** (see below). Elsewhere they post to `src/app/api/contact/route.ts`, which validates them but does not deliver them yet (in production it returns an error rather than pretending to succeed) — connect an email service, CRM or database where the `TODO` is
 
 ## Deploy to Netlify
 
@@ -78,7 +78,7 @@ Stop `npm run dev` before running a local Netlify build — the dev server locks
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL for metadata, sitemap and robots.txt (falls back to Netlify's `URL`, then `http://localhost:3000`) |
 | `NEXT_PUBLIC_SMOOTH_TOUCH` | Set to `false` to turn off Lenis touch smoothing on Android and use native scrolling everywhere (on by default for Android; iOS always uses native scrolling) |
-| `NEXT_PUBLIC_FORM_TARGET` | `netlify` or `api` — forces where the contact form posts (auto-detected: `netlify` on Netlify builds) |
+| `NEXT_PUBLIC_FORM_TARGET` | `netlify` or `api` — where the contact form posts. Set to `netlify` for Netlify builds in `netlify.toml`; defaults to `api` for local development |
 
 ## Accessibility and motion
 
